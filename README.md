@@ -1,2 +1,2 @@
 # Docs
-Documentation for the Tactigon board
+Documentation for the Tactigon board.
