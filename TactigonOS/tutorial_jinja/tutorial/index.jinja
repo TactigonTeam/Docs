@@ -1,0 +1,32 @@
+{% extends "base.jinja" %}
+
+{% block body %}
+<div class="d-flex flex-fill scrollarea">
+    <div class="container my-3">
+        <div class="card">
+            <div class="card-header">
+                Tactigon Skin tutorial
+            </div>
+            <div class="card-body">
+                <h2 class="card-title text-center mt-3">Use your hands</h2>
+                <h5 class="card-subtitle mb-2 text-muted text-center mt-3 mb-5">
+                    You can perform a gesture to give commands
+                </h5>
+                <div class="d-flex justify-content-center my-4">
+                    <img src="{{ url_for('static', filename='images/gesture-voice_340x275.png') }}" alt="twbs" width="340" height="275">
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="{{ url_for('main.index') }}" id="close_button" class="btn btn-secondary px-4">Exit</a>
+                    <a href="{{ url_for('tutorial.choose_hand') }}" class="btn btn-tskin px-4">Gesture tutorial</a>
+                    <a href="{{ url_for('tutorial.voice') }}" class="btn btn-tskin px-4">Voice tutorial</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

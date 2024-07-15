@@ -1,0 +1,123 @@
+{% extends "base.jinja" %}
+
+{% macro steps(current, length) %}
+    <div class="progresses">
+        {% for i in range(length) %}
+            {% if i > 0 %}
+                <span class="line" style="width: {{ 500/length }}px"></span>
+            {% endif %}
+            {% if i <= current %}
+                <div class="steps-current"></div>
+            {% else %}
+                <div class="steps"></div>
+            {% endif %}
+            
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{% block body %}
+<div class="d-flex flex-fill scrollarea">
+    <div class="container my-3">
+        <div class="card">
+            <div class="card-header">
+                Tactigon Skin tutorial
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    {% if hand == "right" %}
+                        {{ steps(index, tskin_right.config.gesture_config.gestures | length) }}
+                    {% else %}
+                        {{ steps(index, tskin_left.config.gesture_config.gestures | length) }}
+                    {% endif %}
+                </div>
+                <h2 class="card-title text-center mt-3">Try to use the T-skin</h2>
+                <h4 class="card-subtitle mb-2 text-muted text-center my-3" id="gesture_name">
+                    
+                </h4>
+                <div class="d-flex justify-content-center my-5">
+                    <h4 id="gesture_result" class="text-center"></h4>
+                </div>
+                <div class="row justify-content-center my-5">
+                    <div class="col-xl-3 col-md-4">
+                        <div class="progress">
+                            <div class="progress-bar bg-tskin" id="progressbar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="25" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="{{ url_for('main.index') }}" id="exit_button" class="btn btn-secondary px-4">Exit</a>
+                    <a href="{{ url_for('tutorial.gesture', index=next_index, hand=hand) }}" class="btn btn-outline-primary">Skip gesture</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(function(){
+        // DOM on load
+        const tskin_config = {% if hand == "right" %}{{ tskin_right.config.toJSON() | tojson | safe }}{% else %}{{ tskin_left.config.toJSON() | tojson | safe }}{% endif %};
+        const socket_endpoint = {% if hand == "right" %}"right_tskin_state"{% else %}"right_tskin_state"{% endif %};
+        const retries = 3;
+        const gesture_result_container = $("#gesture_result"), progress_bar = $("#progressbar");
+        const index = {{ index }};
+        var current_tries = 0;
+
+        $("#gesture_name").html("Gesture: " + tskin_config.gesture_config.gestures[index]);
+
+        socket.on("config", function(data){
+            if (data.tskin_right){
+                setInterval(() => {
+                    socket.emit('tskin_state', {hand: 'right'});
+                }, 100)
+            }
+
+            if (data.tskin_left){
+                setInterval(() => {
+                    socket.emit('tskin_state', {hand: 'left'});
+                }, 100)
+            }
+        })
+        
+        socket.on(socket_endpoint, function(data) {
+            if (data.gesture == null){
+                return;
+            }
+
+            if (data.gesture.gesture == tskin_config.gesture_config.gestures[index]){
+
+                let conf = data.gesture.confidence;
+
+                if (conf <= 35){
+                    gesture_result_container.html(`Retry! This gesture is not valid.`);
+                    return;
+                } else if (conf > 35 && conf < 75){
+                    gesture_result_container.html(`Almost correct! You guessed ${current_tries+1} of ${retries}.`);
+                } else {
+                    gesture_result_container.html(`Correct! You guessed ${current_tries+1} of ${retries}.`);
+                }
+
+                current_tries ++;
+
+                width = Math.ceil(100*current_tries/retries);
+                progress_bar.css("width", `${width}%`);
+
+                if (current_tries >= retries){
+                    setTimeout(function(){
+                        window.location.replace("{{ url_for('tutorial.perfect_gesture', index=index, hand=hand) }}");
+                    }, 1000);
+                }
+            } else if (data.gesture.gesture != "") {
+                gesture_result_container.html(`Wrong gesture. It was ${data.gesture.gesture}...`);
+            }
+        });
+    });
+</script>
+
+{% endblock %}

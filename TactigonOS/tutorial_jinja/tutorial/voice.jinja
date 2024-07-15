@@ -1,0 +1,89 @@
+{% extends "base.jinja" %}
+
+{% macro steps(current, length) %}
+    <div class="progresses">
+        {% for i in range(length) %}
+            {% if i > 0 %}
+                <span class="line" style="width: {{ 500/length }}px"></span>
+            {% endif %}
+            {% if i <= current %}
+                <div class="steps-current"></div>
+            {% else %}
+                <div class="steps"></div>
+            {% endif %}
+            
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{% block body %}
+<div class="d-flex flex-fill scrollarea">
+    <div class="container my-3">
+        <div class="card">
+            <div class="card-header">
+                Tactigon Skin tutorial
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    {{ steps(index, phrases | length) }}
+                </div>
+                <h2 class="card-title text-center mt-3">{{ phrases[index] }}</h2>
+                <h4 class="text-center" id="transcription"></h4>
+                <p id="debug"></p>
+                <div id="result-ok" class="d-none">
+                    <div class="d-flex justify-content-center my-5">
+                        <img src="{{ url_for('static', filename='images/voice-feedback.png') }}" alt="twbs" width="185" height="185">
+                    </div>
+                    <div class="d-flex justify-content-center my-5">
+                        Command recognized!
+                    </div>
+                </div>
+                <div id="result-nok" class="d-none">
+                    <div class="d-flex justify-content-center my-5">
+                        Command not recognized, please repeat.
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="{{ url_for('main.index') }}" id="exit_button" class="btn btn-secondary px-4">Exit</a>
+                    <a href="{{ url_for('tutorial.voice', index=next_index) }}" class="btn btn-outline-primary">Skip phrase</a>
+                    <a href="{{ url_for('tutorial.voice', index=index) }}" id="retry" class="btn btn-outline-primary">Retry</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(function(){
+        // DOM on load
+        const index = {{ index }};
+
+        retry_btn = $("#retry");
+        retry_btn.hide()
+        
+        socket.on("right_tskin_state", function(data) {
+            if (data.transcription == null) {
+                return;
+            }
+
+            if (data.transcription.timeout){
+                console.log("Voice in timeout")
+                retry_btn.show()
+            }
+
+            if (data.transcription.time == 0){
+                $("#transcription").html("Listening: " + data.transcription.text)
+            } else {
+                $("#transcription").html("Transcribed: " + data.transcription.text)
+                $("#debug").html(JSON.stringify(data))
+                retry_btn.show()
+            }
+        });
+    });
+</script>
+
+{% endblock %}

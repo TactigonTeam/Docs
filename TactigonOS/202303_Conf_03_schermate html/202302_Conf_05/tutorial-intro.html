@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Tutorial</title>
+
+    <!-- link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="css/struct.css" rel="stylesheet">
+    <link href="css/skin.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- page header -->
+    <header>
+        <!-- navbar -->
+        <!-- navbar device information -->
+        <nav id="nav-dark">
+            <div class="container d-flex flex-wrap align-items-center">
+                <ul class="nav col-12 justify-content-end gap-3">
+                    <li>
+                        <div class="nav-item nav-element">
+                            <img src="images/tactigon.png" alt="twbs" width="20" height="20">
+                            <small>TACTI</small>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-item nav-element">
+                            <img src="images/right.png" alt="twbs" width="20" height="20">
+                            <small>Right hand</small>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-item nav-element">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-broadcast" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                            </svg><small>-58 dBm</small>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-item nav-element">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-battery-full" viewBox="0 0 16 16">
+                                <path d="M2 6h10v4H2V6z" />
+                                <path
+                                    d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z" />
+                            </svg><small>100%</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- navbar -->
+        <nav>
+            <div class="container d-flex flex-wrap align-items-center">
+                <ul class="nav me-auto">
+                    <li><a href="/account-settings.html" class="nav-link nav-element">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+                            John Doe
+                        </a></li>
+                </ul>
+                <ul class="nav col-auto my-2 justify-content-end my-md-0 align-items-center">
+                    <li>
+                        <a href="/plugin.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-plugin" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a7 7 0 1 1 2.898 5.673c-.167-.121-.216-.406-.002-.62l1.8-1.8a3.5 3.5 0 0 0 4.572-.328l1.414-1.415a.5.5 0 0 0 0-.707l-.707-.707 1.559-1.563a.5.5 0 1 0-.708-.706l-1.559 1.562-1.414-1.414 1.56-1.562a.5.5 0 1 0-.707-.706l-1.56 1.56-.707-.706a.5.5 0 0 0-.707 0L5.318 5.975a3.5 3.5 0 0 0-.328 4.571l-1.8 1.8c-.58.58-.62 1.6.121 2.137A8 8 0 1 0 0 8a.5.5 0 0 0 1 0Z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/device-settings.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/device-settings.html" class="nav-link" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-bluetooth" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="m8.543 3.948 1.316 1.316L8.543 6.58V3.948Zm0 8.104 1.316-1.316L8.543 9.42v2.632Zm-1.41-4.043L4.275 5.133l.827-.827L7.377 6.58V1.128l4.137 4.136L8.787 8.01l2.745 2.745-4.136 4.137V9.42l-2.294 2.274-.827-.827L7.133 8.01ZM7.903 16c3.498 0 5.904-1.655 5.904-8.01 0-6.335-2.406-7.99-5.903-7.99C4.407 0 2 1.655 2 8.01 2 14.344 4.407 16 7.904 16Z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- page content -->
+    <main class="d-flex flex-nowrap flex-shrink-0">
+
+        <div class="container d-flex flex-column flex-shrink-1">
+
+            <div class="card text-center ">
+
+                <div class="card-header p-3">
+                </div>
+                <div class="card-body h-100 card-scroll">
+                    <h2 class="card-title text-center mt-3">Use your hands and your voice</h2>
+                    <h5 class="card-subtitle mb-2 text-muted text-center mt-3 mb-5">You can perform a gesture or
+                        pronounce a
+                        word
+                        to give
+                        commands</h5>
+                    <div class="img-container mt-4">
+                        <img src="images/gesture-voice 340x275.png" alt="twbs" width="340" height="275">
+                    </div>
+                </div>
+                <div class="card-footer py-4 d-flex gap-3 justify-content-center">
+                    <a href="/tskin-configuration.html"><button type="button" class="btn btn-secondary"
+                            style="width: 130px;">Skip</button></a>
+                    <a href="/tutorial-setting.html"><button type="button" class="btn btn-primary"
+                            style="width: 130px;">Start
+                            tutorial</button></a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- page footer -->
+    <footer class="footer mt-auto py-3 d-flex text-center">
+        <div class="container">
+            Version 1.0
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+</body>

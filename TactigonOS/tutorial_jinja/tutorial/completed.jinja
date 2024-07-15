@@ -1,0 +1,53 @@
+{% extends "base.jinja" %}
+
+{% macro steps(current, length) %}
+    <div class="progresses">
+        {% for i in range(length) %}
+            {% if i > 0 %}
+                <span class="line" style="width: {{ 500/length }}px"></span>
+            {% endif %}
+            {% if i <= current %}
+                <div class="steps-current"></div>
+            {% else %}
+                <div class="steps"></div>
+            {% endif %}
+            
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{% block body %}
+<div class="d-flex flex-fill scrollarea">
+    <div class="container my-3">
+        <div class="card">
+            <div class="card-header">
+                Tactigon Skin tutorial
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    {{ steps(index, index) }}
+                </div>
+                <h2 class="card-title text-center mt-3">Perfect</h2>
+                <h5 class="card-subtitle mb-2 text-muted text-center mt-3 mb-5">
+                    You completed the tutorial!
+                </h5>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="{{ url_for('main.index') }}" class="btn btn-tskin px-4">
+                        Close
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(function(){
+
+    })
+</script>
+{% endblock %}

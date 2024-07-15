@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Plugin</title>
+    <!-- link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous">
+    <link href="css/struct.css" rel="stylesheet">
+    <link href="css/skin.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;display=swap"
+      rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100">
+    <!-- page header -->
+    <header>
+      <!-- navbar device information -->
+      <nav id="nav-dark">
+        <div class="container d-flex flex-wrap align-items-center">
+          <ul class="nav col-12 justify-content-end gap-3">
+            <li>
+              <div class="nav-item nav-element"> <img src="images/tactigon.png"
+                  alt="twbs" height="20" width="20"> <small>TACTI</small> </div>
+            </li>
+            <li>
+              <div class="nav-item nav-element"> <img src="images/right.png" alt="twbs"
+                  height="20" width="20"> <small>Right hand</small> </div>
+            </li>
+            <li>
+              <div class="nav-item nav-element">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-broadcast" viewBox="0 0 16 16">
+                  <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"></path>
+                </svg><small>-58 dBm</small> </div>
+            </li>
+            <li>
+              <div class="nav-item nav-element">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                  class="bi bi-battery-full" viewBox="0 0 16 16">
+                  <path d="M2 6h10v4H2V6z"></path>
+                  <path d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"></path>
+                </svg><small>100%</small> </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- navbar -->
+      <nav>
+        <div class="container d-flex flex-wrap align-items-center mx-auto">
+          <ul class="nav me-auto">
+            <li><a href="/account-settings.html" class="nav-link nav-element">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                  class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+                </svg> John Doe </a></li>
+          </ul>
+          <ul class="nav col-auto my-2 justify-content-end my-md-0 align-items-center">
+            <li> <a href="/plugin.html" class="nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                  class="bi bi-plugin" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a7 7 0 1 1 2.898 5.673c-.167-.121-.216-.406-.002-.62l1.8-1.8a3.5 3.5 0 0 0 4.572-.328l1.414-1.415a.5.5 0 0 0 0-.707l-.707-.707 1.559-1.563a.5.5 0 1 0-.708-.706l-1.559 1.562-1.414-1.414 1.56-1.562a.5.5 0 1 0-.707-.706l-1.56 1.56-.707-.706a.5.5 0 0 0-.707 0L5.318 5.975a3.5 3.5 0 0 0-.328 4.571l-1.8 1.8c-.58.58-.62 1.6.121 2.137A8 8 0 1 0 0 8a.5.5 0 0 0 1 0Z"></path>
+                </svg> </a> <br>
+            </li>
+            <li>&nbsp;<br>
+            </li>
+            <li> <a href="/device-settings.html" class="nav-link" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                  class="bi bi-bluetooth" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="m8.543 3.948 1.316 1.316L8.543 6.58V3.948Zm0 8.104 1.316-1.316L8.543 9.42v2.632Zm-1.41-4.043L4.275 5.133l.827-.827L7.377 6.58V1.128l4.137 4.136L8.787 8.01l2.745 2.745-4.136 4.137V9.42l-2.294 2.274-.827-.827L7.133 8.01ZM7.903 16c3.498 0 5.904-1.655 5.904-8.01 0-6.335-2.406-7.99-5.903-7.99C4.407 0 2 1.655 2 8.01 2 14.344 4.407 16 7.904 16Z"></path>
+                </svg> </a> <br>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- page content -->
+    <main class="d-flex flex-nowrap flex-shrink-0">
+      <!-- sidebar -->
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-light h-100" style="width: 280px;">
+        <div style="text-align: center;"><a href="/tskin-configuration.html" class="text-black"><svg
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+              class="bi bi-arrow-left" viewBox="0 0 16 16"></svg></a><span class="fs-4">Applications</span></div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="col d-flex justify-content-end"><br>
+          </div>
+        </div>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item"> <a href="#" class="nav-link active" aria-current="page">
+              <img src="images/rhino-logo.png" alt="twbs" height="20" width="20">
+              Rhino 7 </a> </li>
+          <li class="nav-item"> <a href="#" class="nav-link "> <img src="images/blender-logo.png"
+                alt="twbs" height="20" width="20"> Blender </a> </li>
+          <li class="nav-item"> <a href="#" class="nav-link "> <img src="images/indesign-logo.png"
+                alt="twbs" height="20" width="20"> Adobe Indesign </a> </li>
+        </ul>
+      </div>
+      <div class="container d-flex flex-column flex-shrink-1" style="margin-left: 40px;">
+        <div style="text-align: left;">
+          <p> <span style="color: #999999;">Rhino 7</span></p>
+        </div>
+        <div style="text-align: left;"><span style="color: black;">Commands
+            set-up</span></div>
+        <div style="text-align: left;"><span style="color: black;">MODEL_01_R <span
+              style="color: #999999;">-</span> <span style="color: #999999;">2022/12/19
+              12:20:11 <img src="images/right.png" alt="twbs" height="20" width="20">
+            </span>
+            <div class="col d-flex justify-content-end gap-3 mt-2"><button type="button"
+                class="btn btn-light">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                  </path> </svg> </button> <button type="button" "btn="" btn-primary=""
+                dropdown-toggle"="" aria-expanded="false" data-bs-toggle="dropdown">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-list" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+                  </path> </svg>
+                <div class="dropdown-menu"> <a class="dropdown-item" <a="" href="#"
+                    data-bs-toggle="modal" data-bs-target="#ModelSelection"> <span>
+                      Change model </span>
+                    <div class="col d-flex w-auto justify-content-end align-items-center">
+                    </div>
+                  </a> <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                    data-bs-target="#Makehole"> <span> Create new model </span>
+                    <div class="col d-flex w-auto justify-content-end align-items-center">
+                    </div>
+                  </a><a class="dropdown-item" href="#">What is a model</a></div>
+              </button> </div>
+          </span></div>
+        <hr>
+        <div class="container d-flex flex-column flex-shrink-1">
+          <!-- hand selection -->
+          <div class="row mt-3 gap-3">
+            <div class="col-xl-4 col-sm-7">
+              <div class="d-flex gap-3 align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrows-move" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                </svg>
+                <h5>Gestures</h5>
+              </div>
+              <div class="list-group2 mb-3 ps-4"> <a class="list-group-item list-group-item-action d-flex p-3"
+                  data-bs-toggle="modal" data-bs-target="#Backward"> <span>
+                    Backward </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- gesture preview modal -->
+                <div class="modal fade" id="Backward" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                          </svg>Backward</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/swipe-left-341x155.png"
+                          alt="twbs" height="130"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3"> <button type="button" class="btn btn-outline-dark d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="width: 220px; border-radius: 20px;"> <img src="images/3stars.png"
+                              alt="twbs" height="24" width="48"> 90% trained
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-caret-right-fill"
+                              viewBox="0 0 16 16">
+                              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                            </svg> </button> <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="list-group-item list-group-item-action d-flex p-3" data-bs-toggle="modal"
+                  data-bs-target="#Circle"> <span> Circle </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- gesture preview modal -->
+                <div class="modal fade" id="Circle" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                          </svg>Circle</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/swipe-left-341x155.png"
+                          alt="twbs" height="130"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3"> <button type="button" class="btn btn-outline-dark d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="width: 220px; border-radius: 20px;"> <img src="images/3stars.png"
+                              alt="twbs" height="24" width="48"> 90% trained
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-caret-right-fill"
+                              viewBox="0 0 16 16">
+                              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                            </svg> </button> <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="list-group-item list-group-item-action d-flex p-3" data-bs-toggle="modal"
+                  data-bs-target="#Forward"> <span> Forward </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- gesture preview modal -->
+                <div class="modal fade" id="Forward" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                          </svg>Forward</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/swipe-left-341x155.png"
+                          alt="twbs" height="130"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3"> <button type="button" class="btn btn-outline-dark d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="width: 220px; border-radius: 20px;"> <img src="images/3stars.png"
+                              alt="twbs" height="24" width="48"> 90% trained
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-caret-right-fill"
+                              viewBox="0 0 16 16">
+                              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                            </svg> </button> <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="list-group-item list-group-item-action d-flex p-3" data-bs-toggle="modal"
+                  data-bs-target="#Shake"> <span> Shake </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- gesture preview modal -->
+                <div class="modal fade" id="Shake" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                          </svg>Shake</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/swipe-left-341x155.png"
+                          alt="twbs" height="130"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3"> <button type="button" class="btn btn-outline-dark d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="width: 220px; border-radius: 20px;"> <img src="images/3stars.png"
+                              alt="twbs" height="24" width="48"> 90% trained
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-caret-right-fill"
+                              viewBox="0 0 16 16">
+                              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                            </svg> </button> <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="list-group-item list-group-item-action d-flex p-3" data-bs-toggle="modal"
+                  data-bs-target="#Square"> <span> Square </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- gesture preview modal -->
+                <div class="modal fade" id="Square" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                          </svg>Square</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/swipe-left-341x155.png"
+                          alt="twbs" height="130"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3"> <button type="button" class="btn btn-outline-dark d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="width: 220px; border-radius: 20px;"> <img src="images/3stars.png"
+                              alt="twbs" height="24" width="48"> 90% trained
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-caret-right-fill"
+                              viewBox="0 0 16 16">
+                              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                            </svg> </button> <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="list-group-item list-group-item-action d-flex p-3" data-bs-toggle="modal"
+                  data-bs-target="#Swipedown"> <span> Swipe down </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- gesture preview modal -->
+                <div class="modal fade" id="Swipedown" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                          </svg>Swipe down</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/swipe-left-341x155.png"
+                          alt="twbs" height="130"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3"> <button type="button" class="btn btn-outline-dark d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="width: 220px; border-radius: 20px;"> <img src="images/3stars.png"
+                              alt="twbs" height="24" width="48"> 90% trained
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-caret-right-fill"
+                              viewBox="0 0 16 16">
+                              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                            </svg> </button> <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="list-group-item list-group-item-action d-flex p-3" data-bs-toggle="modal"
+                  data-bs-target="#Swipeleft"> <span> Swipe left </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- gesture preview modal -->
+                <div class="modal fade" id="Swipeleft" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                          </svg>Swipe left</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/swipe-left-341x155.png"
+                          alt="twbs" height="130"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3"> <button type="button" class="btn btn-outline-dark d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="width: 220px; border-radius: 20px;"> <img src="images/3stars.png"
+                              alt="twbs" height="24" width="48"> 90% trained
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-caret-right-fill"
+                              viewBox="0 0 16 16">
+                              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                            </svg> </button> <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="list-group-item list-group-item-action d-flex p-3" data-bs-toggle="modal"
+                  data-bs-target="#Swiperight"> <span> Swipe right </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- gesture preview modal -->
+                <div class="modal fade" id="Swiperight" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                          </svg>Swipe right</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/swipe-left-341x155.png"
+                          alt="twbs" height="130"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3"> <button type="button" class="btn btn-outline-dark d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="width: 220px; border-radius: 20px;"> <img src="images/3stars.png"
+                              alt="twbs" height="24" width="48"> 90% trained
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-caret-right-fill"
+                              viewBox="0 0 16 16">
+                              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                            </svg> </button> <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Button trigger gesture modal --> <button type="button" class="btn btn-primary d-flex mt-3 gap-3 align-items-center justify-content-center ms-4"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 160px;">
+                <svg xmlns=" http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
+                </svg> Add gesture </button>
+              <!-- Gestures modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                  style="width:400px;">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                        id="exampleModalLabel">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                          fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                        </svg>Manage gestures</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"> </button> </div>
+                    <div class="modal-body" style="height: 500px;">
+                      <!-- speech -->
+                      <div class="input-group mb-3"> <input class="form-control"
+                          placeholder="Search command" aria-label="Search command"
+                          aria-describedby="basic-addon1" type="text"> <span class="input-group-text"
+                          id="basic-addon1">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                            </path> </svg> </span> </div>
+                      <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingBackward">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseBackward"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseBackward"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Backward </span> </button> </div>
+                          <div id="panelsStayOpen-collapseBackward" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingBackward">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingCircle">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseCircle"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseCircle"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Circle </span> </button> </div>
+                          <div id="panelsStayOpen-collapseCircle" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingCircle">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingForward">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseForward"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseForward"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Forward </span> </button> </div>
+                          <div id="panelsStayOpen-collapseForward" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingForward">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingKnock">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseKnock"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseKnock"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Knock twice </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseKnock" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingKnock">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingRotateD">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRotateD"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseRotateD"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Rotate down </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseRotateD" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingRotateD">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingRotateL">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRotateL"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseRotateL"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Rotate left </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseRotateL" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingRotateL">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingRotateR">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRotateR"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseRotateR"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Rotate right </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseRotateR" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingRotateR">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingShake">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseShake"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseShake"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Shake </span> </button> </div>
+                          <div id="panelsStayOpen-collapseShake" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingShake">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingSpiral">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSpiral"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseSpiral"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Spiral </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseSpiral" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingSpiral">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingSquare">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSquare"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseSquare"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Square </span> </button> </div>
+                          <div id="panelsStayOpen-collapseSquare" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingSquare">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingDown">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseDown"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseDown"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Swipe down </span> </button> </div>
+                          <div id="panelsStayOpen-collapseDown" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingDown">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingLeft">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseLeft"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseLeft"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Swipe left </span> </button> </div>
+                          <div id="panelsStayOpen-collapseLeft" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingLeft">
+                            <div class="accordion-body"> <img src="images/swipe-left.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingRight">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRight"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseRight"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Swipe right </span> </button> </div>
+                          <div id="panelsStayOpen-collapseRight" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingRight">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingUp">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseUp"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseUp"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Swipe up </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseUp" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingUp">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingTriangle">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTriangle"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseTriangle"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Triangle </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseTriangle" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingTriangle">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingU">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseU"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseU"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> U shape </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseU" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingU">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingV">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseV"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseV"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> V shape </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseV" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingV">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingWave">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseWave"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseWave"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Wave </span> </button>
+                          </div>
+                          <div id="panelsStayOpen-collapseWave" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingWave">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <div calss="row"> <button type="button" class="btn btn-outline-secondary mb-2 mx-auto"
+                          data-bs-dismiss="modal" style="border-radius: 18px;">Add
+                          custom gesture</button> </div>
+                      <div calss="row"> <button type="button" class="btn btn-secondary"
+                          data-bs-dismiss="modal">Close</button> <button type="button"
+                          class="btn btn-primary">Save changes</button> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-1 col-sm-0"></div>
+            <div class="col-xl-4 col-sm-7">
+              <div class="d-flex gap-3 align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-mic" viewBox="0 0 16 16">
+                  <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z">
+                  </path>
+                  <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z">
+                  </path> </svg>
+                <h5>Speech</h5>
+              </div>
+              <div class="list-group2 mb-3 ps-4"> <a href="#" class="list-group-item list-group-item-action d-flex p-3"
+                  data-bs-toggle="modal" data-bs-target="#Copyobject"> <span>
+                    Copy object </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- ----------------------------------- Model selection obj-->
+                <div class="modal fade" id="ModelSelection" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content w-auto">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">Model selection</h1>
+                      </div>
+                      <div> You are choosing the model for T-skin TACTI on the
+                        right hand </div>
+                      <div class="modal-body" id="commands-modal-body">
+                        <!-- ELENCO MODELLI -->
+                        <div class="list-group3 mb-3 ps-4"> <a class="list-group-item list-group-item-action d-flex p-3"
+                            data-bs-toggle="modal" data-bs-target="#mod1"> MODEL
+                            01 L <span style="color:grey"> - 2022/12/19
+                              16:20:11 <img src="images/left.png" alt="twbs" height="20"
+                                width="20"> </span> </a>
+                          <div class="col d-flex w-auto justify-content-end align-items-center">
+                            <!-- obj modal -->
+                            <div class="modal fade" id="mod1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                              aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                                      id="exampleModalLabel">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-arrows-move"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"></path>
+                                      </svg>Modello1</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                      aria-label="Close"> </button> </div>
+                                  <div class="modal-body" id="commands-modal-body">
+                                    <img src="images/swipe-left-341x155.png" alt="twbs"
+                                      height="130"> </div>
+                                  <div class="modal-footer">
+                                    <div class="col my-3"> <button type="button"
+                                        class="btn btn-outline-dark d-flex align-items-center gap-3 justify-content-center mx-auto"
+                                        style="width: 220px; border-radius: 20px;">
+                                        <img src="images/3stars.png" alt="twbs"
+                                          height="24" width="48"> 90% trained
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                          width="16" height="16" fill="currentColor"
+                                          class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                                        </svg> </button> <button type="button"
+                                        class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                                        style="margin-top: 16px; width: auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                          width="16" height="16" fill="currentColor"
+                                          class="bi bi-dash-lg" viewBox="0 0 16 16">
+                                          <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                                          </path> </svg> Remove command </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- ELENCO MODELLI --> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3">
+                          <div class="row gap-4 justify-content-center"> <button
+                              type="button" class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-volume-up-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z">
+                                </path>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z">
+                                </path>
+                                <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z">
+                                </path> </svg> </button> <button type="button"
+                              class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-mic-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"></path>
+                                <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"></path>
+                              </svg> </button> </div>
+                          <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- speech preview modal -->
+                <div class="modal fade" id="Copyobject" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content w-auto">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z">
+                            </path>
+                            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z">
+                            </path> </svg>Copy object</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/copyobject.png"
+                          alt="twbs" height="234"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3">
+                          <div class="row gap-4 justify-content-center"> <button
+                              type="button" class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-volume-up-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z">
+                                </path>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z">
+                                </path>
+                                <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z">
+                                </path> </svg> </button> <button type="button"
+                              class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-mic-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"></path>
+                                <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"></path>
+                              </svg> </button> </div>
+                          <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="list-group-item list-group-item-action d-flex p-3"
+                  data-bs-toggle="modal" data-bs-target="#Createprism"> <span>
+                    Create prism </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- speech preview modal -->
+                <div class="modal fade" id="Createprism" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content w-auto">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z">
+                            </path>
+                            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z">
+                            </path> </svg>Create prism</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/placeholder.png"
+                          alt="twbs" height="234"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3">
+                          <div class="row gap-4 justify-content-center"> <button
+                              type="button" class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-volume-up-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z">
+                                </path>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z">
+                                </path>
+                                <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z">
+                                </path> </svg> </button> <button type="button"
+                              class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-mic-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"></path>
+                                <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"></path>
+                              </svg> </button> </div>
+                          <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="list-group-item list-group-item-action d-flex p-3"
+                  data-bs-toggle="modal" data-bs-target="#Createpolygon"> <span>
+                    Create polygon </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- speech preview modal -->
+                <div class="modal fade" id="Createpolygon" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content w-auto">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z">
+                            </path>
+                            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z">
+                            </path> </svg>Create polygon</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/placeholder.png"
+                          alt="twbs" height="234"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3">
+                          <div class="row gap-4 justify-content-center"> <button
+                              type="button" class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-volume-up-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z">
+                                </path>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z">
+                                </path>
+                                <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z">
+                                </path> </svg> </button> <button type="button"
+                              class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-mic-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"></path>
+                                <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"></path>
+                              </svg> </button> </div>
+                          <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="list-group-item list-group-item-action d-flex p-3"
+                  data-bs-toggle="modal" data-bs-target="#Delateobject"> <span>
+                    Delete object </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- speech preview modal -->
+                <div class="modal fade" id="Delateobject" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content w-auto">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z">
+                            </path>
+                            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z">
+                            </path> </svg>Delate object</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/placeholder.png"
+                          alt="twbs" height="234"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3">
+                          <div class="row gap-4 justify-content-center"> <button
+                              type="button" class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-volume-up-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z">
+                                </path>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z">
+                                </path>
+                                <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z">
+                                </path> </svg> </button> <button type="button"
+                              class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-mic-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"></path>
+                                <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"></path>
+                              </svg> </button> </div>
+                          <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="list-group-item list-group-item-action d-flex p-3"
+                  data-bs-toggle="modal" data-bs-target="#Exportobject"> <span>
+                    Export object </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- speech preview modal -->
+                <div class="modal fade" id="Exportobject" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content w-auto">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z">
+                            </path>
+                            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z">
+                            </path> </svg>Export object</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/placeholder.png"
+                          alt="twbs" height="234"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3">
+                          <div class="row gap-4 justify-content-center"> <button
+                              type="button" class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-volume-up-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z">
+                                </path>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z">
+                                </path>
+                                <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z">
+                                </path> </svg> </button> <button type="button"
+                              class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-mic-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"></path>
+                                <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"></path>
+                              </svg> </button> </div>
+                          <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="list-group-item list-group-item-action d-flex p-3" data-bs-toggle="modal"
+                  data-bs-target="#Makehole"> <span> Make hole </span>
+                  <div class="col d-flex w-auto justify-content-end align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                    </svg> </div>
+                </a>
+                <!-- speech preview modal -->
+                <div class="modal fade" id="Makehole" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content w-auto">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                          id="exampleModalLabel">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z">
+                            </path>
+                            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z">
+                            </path> </svg>Make hole</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"> </button> </div>
+                      <div class="modal-body" id="commands-modal-body"> <img src="images/makehole.png"
+                          alt="twbs" height="234"> </div>
+                      <div class="modal-footer">
+                        <div class="col my-3">
+                          <div class="row gap-4 justify-content-center"> <button
+                              type="button" class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-volume-up-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z">
+                                </path>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z">
+                                </path>
+                                <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z">
+                                </path> </svg> </button> <button type="button"
+                              class="btn btn-outline-dark btn-just-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" fill="currentColor" class="bi bi-mic-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"></path>
+                                <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"></path>
+                              </svg> </button> </div>
+                          <button type="button" class="btn btn-secondary d-flex align-items-center gap-3 justify-content-center mx-auto"
+                            style="margin-top: 16px; width: auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z">
+                              </path> </svg> Remove command </button> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Button trigger modal --> <button type="button" class="btn btn-primary d-flex mt-3 gap-3 align-items-center justify-content-center ms-4"
+                data-bs-toggle="modal" data-bs-target="#exampleModal1" style="width: 160px;">
+                <svg xmlns=" http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
+                </svg> Add word </button>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                  style="width:400px;">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5 d-flex gap-3 align-items-center"
+                        id="exampleModal1Label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                          fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                          <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z">
+                          </path>
+                          <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z">
+                          </path> </svg>Manage speech commands</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"> </button> </div>
+                    <div class="modal-body" style="height: 500px;">
+                      <!-- speech -->
+                      <div class="input-group mb-3"> <input class="form-control"
+                          placeholder="Search command" aria-label="Search command"
+                          aria-describedby="basic-addon1" type="text"> <span class="input-group-text"
+                          id="basic-addon1">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                            </path> </svg> </span> </div>
+                      <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                          <div class="accordion-header" id="panelsStayOpen-headingBoolean">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseBoolean"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseBoolean"
+                              id="accordion1btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Boolean
+                                operation </span> </button> </div>
+                          <div id="panelsStayOpen-collapseBoolean" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingBoolean">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingCopy">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseCopy"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseCopy"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Copy object </span> </button> </div>
+                          <div id="panelsStayOpen-collapseCopy" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingCopy">
+                            <div class="accordion-body"> <img src="images/copyobject.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingPrism">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsePrism"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapsePrism"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Create prism </span> </button> </div>
+                          <div id="panelsStayOpen-collapsePrism" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingPrism">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingPolygon">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsePolygon"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapsePolygon"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Create polygon </span> </button> </div>
+                          <div id="panelsStayOpen-collapsePolygon" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingPolygon">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingDelete">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseDelete"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseDelete"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Delete object </span> </button> </div>
+                          <div id="panelsStayOpen-collapseDelete" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingDelete">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingEdit">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEdit"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseEdit"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Edit </span> </button>
+                          </div>
+                          <div id="panelsStayOpen-collapseEdit" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingEdit">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingExport">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseExport"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseExport"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Export object </span> </button> </div>
+                          <div id="panelsStayOpen-collapseExport" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingExport">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingExtrude">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseExtrude"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseExtrude"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Extrude </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseExtrude" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingExtrude">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingEsc">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEsc"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseEsc"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Esc </span> </button>
+                          </div>
+                          <div id="panelsStayOpen-collapseEsc" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingEsc">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingFillet">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFillet"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseFillet"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Fillet surface </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseFillet" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingFillet">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingJoin">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseJoin"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseJoin"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Join </span> </button>
+                          </div>
+                          <div id="panelsStayOpen-collapseJoin" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingJoin">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingHole">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseHole"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseHole"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" checked="checked" type="checkbox"><span>
+                                Make hole </span> </button> </div>
+                          <div id="panelsStayOpen-collapseHole" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingHole">
+                            <div class="accordion-body"> <img src="images/makehole.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingNew">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNew"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseNew"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> New file </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseNew" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingNew">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingRename">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRename"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseRename"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Rename </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseRename" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingRename">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingRepeat">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRepeat"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseRepeat"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Repeat </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseRepeat" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingRepeat">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingUngroup">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseUngroup"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseUngroup"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Ungroup </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseUngroup" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingUngroup">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingUnwrap">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseUnwrap"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseUnwrap"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Unwrap </span>
+                            </button> </div>
+                          <div id="panelsStayOpen-collapseUnwrap" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingUnwrap">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <div class="accordion-header" id="panelsStayOpen-headingSave">
+                            <button class="accordion-button collapsed " type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSave"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseSave"
+                              id="accordion2btn"> <input class="form-check-input flex-shrink-0 me-3 my-auto"
+                                value="" type="checkbox"><span> Save </span> </button>
+                          </div>
+                          <div id="panelsStayOpen-collapseSave" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingSave">
+                            <div class="accordion-body"> <img src="images/placeholder.png"
+                                alt="twbs" width="100%"> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer"> <button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Close</button> <button type="button"
+                        class="btn btn-primary">Save changes</button> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- page footer -->
+    <footer class="footer mt-auto py-3 d-flex text-center">
+      <div class="container"> Version 1.0 </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+crossorigin="anonymous">
+    </script>
+  </body>
+</html>
